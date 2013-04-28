@@ -104,7 +104,7 @@ UserReady()
 				MouseClick, Left, 325, 212
 				Sleep, 100
 
-				Pause
+				ExitApp
 			}
 
 			;PixelSearch, FoundbX, FoundbY, 296, 182, 349, 233, 0x303030, 0, Fast
