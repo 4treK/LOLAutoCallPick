@@ -1,5 +1,9 @@
+global ProgramStatus
 global ChampionSelected
-global RoleSelected
+global RoleSelectedMode
+global RoleSelectedRadio
+global RoleSelectedEdit
+global CloseProgramAfterAutoCallPick
 
 #SingleInstance force
 Init()
@@ -9,10 +13,11 @@ F12::ExitApp
 
 Init()
 {
-	gui, new, , LOL AutoPick
-	gui, add, groupbox, section, Choose Hero:
+	Menu, Tray, Icon, shell32.dll, 44
+
+	Gui, Add, GroupBox, x10 y10 w210 h10, Select Hero
 	gui, add, DropDownList
-		, xp+10 yp+20 vChampionSelected
+		, x10 y30 w210 h21 Choose1 Sort r20 vChampionSelected
 		,Ahri|Akali|Alistar|Amumu|Anivia|Annie|Ashe|Blitzcrank|Brand|Caitlyn|Cassiopeia|Cho'Gath|Corki|Darius|Diana|Dr. Mundo|Draven
 		|Elise|Evelynn|Ezreal|Fiddlesticks|Fiora|Fizz|Galio|Gangplank|Garen|Gragas|Graves|Hecarim|Heimerdinger|Irelia|Janna|Jarvan IV|Jax|Jayce
 		|Karma|Karthus|Kassadin|Katarina|Kayle|Kennen|Kha'Zix|Kog'Maw|LeBlanc|Lee|Leona|Lulu|Lux Mage|Malphite|Malzahar|Maokai|Master Yi|Miss Fortune|Mordekaiser|Morgana
@@ -20,69 +25,84 @@ Init()
 		|Sejuani|Shaco|Shen|Shyvana|Singed|Sion|Sivir|Skarner|Sona|Soraka|Swain|Syndra|Talon|Taric|Teemo|Thresh|Tristana|Trundle|Tryndamere|Twisted Fate|Twitch
 		|Udyr|Urgot|Varus|Vayne|Veigar|Vi|Viktor|Vladimir|Volibear|Warwick|Wukong|Xerath|Xin Zhao|Yorick|Zac|Zed|Ziggs|Zilean|Zyra
 
-	gui, add, groupbox, xs r6 section, Choose Role:
-	gui, add, Radio
-		, xp+10 yp+20 section vRoleSelected
-		,Top
-	gui, add, Radio
-		,xs
-		,Mid
-	gui, add, Radio
-		,xs
-		,Bot
-	gui, add, Radio
-		,xs
-		,Jungle
-	gui, add, Radio
-		,xs
-		,Support
-	gui, add, Radio
-		,xs
-		,ADC
+	Gui, Add, GroupBox, x10 y180 w210 h10,
+	Gui, Add, Button, x10 y200 w210 h40 gUserReadyLabel, Start!
+	Gui, Add, Button, x10 y250 w100 h30 gSaveProfileLabel, Save profile
+	Gui, Add, Button, x120 y250 w100 h30 gSaveProfileLabel, Load profile
 
-	gui, add, groupbox, xm r1 section
-	Gui, Add, Button, xp+10 yp+10 w120 Default gUserReadyLabel, Done
+	Gui, Add, GroupBox, x12 y319 w210 h10, Status
+	Gui, Add, Text, x12 y339 w210 r4 vProgramStatus, Waiting user to be ready :)
+	Gui, Add, GroupBox, x12 y399 w210 h10 , About
+	Gui, Add, Link, x12 y419 w210 r4 c008080, Created by k014 (NA Server summoner)`n`nCheck last version in the website:`n<a href="http://github.com/joecabezas/LOLAutoPick">http://github.com/joecabezas/LOLAutoPick</a>
 
-	gui, show, AutoSize Center
-	return
+	Gui, Add, CheckBox, x12 y289 w210 h20 vCloseProgramAfterAutoCallPick, Close program after AutoCallPick
+
+	Gui, Add, GroupBox, x10 y60 w210 h10 , Select Role
+	Gui, Add, Tab, x10 y80 w210 h100 vRoleSelectedMode, Standard|Custom
+	Gui, Add, Radio, x25 y110 w70 h20 Checked vRoleSelectedRadio, Top
+	Gui, Add, Radio, x25 y130 w70 h20 , Mid
+	Gui, Add, Radio, x25 y150 w70 h20 , Bot
+	Gui, Add, Radio, x130 y110 w70 h20 , Jungle
+	Gui, Add, Radio, x130 y130 w70 h20 , Support
+	Gui, Add, Radio, x130 y150 w70 h20 , ADC
+	Gui, Tab, Custom
+	Gui, Add, Text, x20 y110 w190 h20 , Write your custom "call" message
+	Gui, Add, Edit, x20 y130 w190 h40 vRoleSelectedEdit, I go mid, I type super fast!
+	; Generated using SmartGUI Creator 4.0
+	gui, show, AutoSize Center, LOLAutoCallPick
+	;Gui, Show, center w230 h320, LOLAutoCallPick
+	Return
+
+	SaveProfileLabel:
+		msgbox, 48, Soon..., This feature is not yet implemented`nJust give me some time :)`nCheck the website!
+		return
 
 	UserReadyLabel:
+		gui, submit, nohide
 		UserReady()
 		return
 }
 
 UserReady()
 {
-	gui,submit,nohide
-	gui, destroy
-	;msgbox Hero: %ChampionSelected%`nRole: %RoleSelected%
-
 	static role
 
-	if RoleSelected = 1
+	if RoleSelectedMode = Standard
 	{
-		role = top
+		if RoleSelectedRadio = 1
+		{
+			role = top
+		}
+		if RoleSelectedRadio = 2
+		{
+			role = mid
+		}
+		if RoleSelectedRadio = 3
+		{
+			role = bot
+		}
+		if RoleSelectedRadio = 4
+		{
+			role = jungle
+		}
+		if RoleSelectedRadio = 5
+		{
+			role = support
+		}
+		if RoleSelectedRadio = 6
+		{
+			role = adc
+		}
 	}
-	if RoleSelected = 2
+	else
 	{
-		role = mid
+		role = %RoleSelectedEdit%
 	}
-	if RoleSelected = 3
-	{
-		role = bot
-	}
-	if RoleSelected = 4
-	{
-		role = jungle
-	}
-	if RoleSelected = 5
-	{
-		role = support
-	}
-	if RoleSelected = 6
-	{
-		role = adc
-	}
+
+	MsgBox, 64, Status, Champion:      %ChampionSelected%`nRole:                 %role%, 2
+
+	;UPDATE STATUS
+	guicontrol, , ProgramStatus, Waiting for Champion Selection Screen`n`nChampion:   %ChampionSelected%`nRole:            %role%
 
 	Loop
 	{
@@ -91,8 +111,9 @@ UserReady()
 			PixelSearch, FoundaX, FoundaY, 852, 121, 1001, 150, 0xFFFFFF, 0, Fast ;Find Search Box
 			if ErrorLevel = 0
 			{
+				guicontrol, , ProgramStatus, Auto calling and picking...
 				;CALL ROLE
-				Sleep, 100
+				Sleep, 500
 				MouseClick, left, 300, 735
 				Send, %role%{enter}
 				Sleep, 100
@@ -102,17 +123,18 @@ UserReady()
 				Send, %ChampionSelected%
 				Sleep, 100
 				MouseClick, Left, 325, 212
-				Sleep, 100
 
-				ExitApp
+				Sleep, 500
+
+				guicontrol, , ProgramStatus, Auto call and pick done...`nClick Start button again to begin another round :)
+
+				if CloseProgramAfterAutoCallPick = 1
+				{
+					ExitApp
+				}
+
+				return
 			}
-
-			;PixelSearch, FoundbX, FoundbY, 296, 182, 349, 233, 0x303030, 0, Fast
-			;if ErrorLevel = 0
-			;{
-			;	Pause
-			;	;ExitApp
-			;}
 		}
 	}
 }
