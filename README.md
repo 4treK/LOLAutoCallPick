@@ -1,3 +1,7 @@
+If you liked this tool, please buy me a beer :)
+
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=joecabezas&url=https://github.com/joecabezas/LOLAutoCallPick&title=LOLAutoCallPick&language=&tags=github&category=software) 
+
 LOLAutoCallPick
 ===========
 
@@ -8,11 +12,22 @@ want to collaborate?, just contact me or make a pull request if you are familiar
 Download
 ---------
 
-TLDR: https://github.com/joecabezas/LOLAutoCallPick/blob/master/bin/LOLAutoCallPick.exe?raw=true
+**TLDR**: [Click here](https://github.com/joecabezas/LOLAutoCallPick/blob/master/bin/LOLAutoCallPick.exe?raw=true) 
+Download the executable (.exe)
 
 You have 2 options, run the script in AutoHotKey software, or opening the excecutable version.
 
-LOLAutoCallPick is an AutoHotKey script, so, if you have problems or you do not trust in the excecutable, just download for free AutoHotKey (google it), and then run the script file LOLAutoCallPick.ahk, this file it's just a simple plain text file, so you can open it in notepad towatch inside the code and see what's actually doing.
+LOLAutoCallPick is an AutoHotKey script, so, if you have problems or you do not trust in the excecutable, just download for free [AutoHotKey](http://www.autohotkey.com/), and then run the script file LOLAutoCallPick.ahk, this file it's just a simple plain text file, so you can open it in notepad towatch inside the code and see what's actually doing.
+
+About Antiviruses
+-----------------
+
+Scripts compiled with [AutoHotKey](http://www.autohotkey.com/) can eventually be detected as suspicious software, I really
+want to get rid of this, but it's a know bug for [AutoHotKey](http://www.autohotkey.com/), anyways, some antiviruses updated
+gives no problem, and others, like "Avast!" takes some seconds warning you and then shows a message something like: "analisis complete, could not find any malicious software, want to continue run this?", just click continue.
+
+If you do not trust in the excecutable, simply download [AutoHotKey](http://www.autohotkey.com/), and download the script (.ahk file), and run it by yourself...
+you can see the code (yay opensource!) and check there is no harmful code, just fun! :D
 
 Author
 ---------
