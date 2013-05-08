@@ -1,6 +1,6 @@
 If you liked this tool, please buy me a beer :)
 
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=joecabezas&url=https://github.com/joecabezas/LOLAutoCallPick&title=LOLAutoCallPick&language=&tags=github&category=software) [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=joecabezas&url=https://github.com/joecabezas/LOLAutoCallPick&title=LOLAutoCallPick&language=&tags=github&category=software) [![Donate](http://i.imgur.com/DFttzxK.gif)](
 https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NPEG3C3DV2YCL)
 
 LOLAutoCallPick
