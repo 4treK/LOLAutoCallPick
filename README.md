@@ -7,7 +7,13 @@ LOLAutoCallPick
 
 A script that auto calls role and auto pick hero :), have fun!
 
+....................
+....................
+....................
+![LOLAutoCallPick Window](http://i.imgur.com/udweYwn.png)
+
 want to collaborate?, just contact me or make a pull request if you are familiar with github (and git of course)
+want a feature?, you dont need to know about programming, just let me know! :D
 
 Download
 ---------
