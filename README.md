@@ -12,7 +12,7 @@ A script that auto calls role and auto pick hero :), have fun!
 ....................
 ![LOLAutoCallPick Window](http://i.imgur.com/udweYwn.png)
 
-want to collaborate?, just contact me or make a pull request if you are familiar with github (and git of course)
+want to collaborate?, just contact me or make a pull request if you are familiar with github (and git of course)  
 want a feature?, you dont need to know about programming, just let me know! :D
 
 Download
@@ -41,4 +41,4 @@ you can see the code (yay opensource!) and check there is no harmful code, just 
 Author
 ---------
 
-In LOL mi summoner's name is k014 (in NA server), feel free to contact me.
+In LOL my summoner's name is k014 (in NA server), feel free to contact me.
