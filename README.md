@@ -22,11 +22,14 @@ LOLAutoCallPick is an AutoHotKey script, so, if you have problems or you do not 
 About Antiviruses
 -----------------
 
-Scripts compiled with [AutoHotKey](http://www.autohotkey.com/) can eventually be detected as suspicious software, I really
-want to get rid of this, but it's a know bug for [AutoHotKey](http://www.autohotkey.com/), anyways, some antiviruses updated
-gives no problem, and others, like "Avast!" takes some seconds warning you and then shows a message something like: "analisis complete, could not find any malicious software, want to continue run this?", just click continue.
+Scripts compiled with [AutoHotKey](http://www.autohotkey.com/) can eventually be detected as suspicious software,
+I really want to get rid of this, but it's a known bug for [AutoHotKey](http://www.autohotkey.com/), anyways,
+some antiviruses (when updated) gives no problem at all, and others, like "Avast!" takes some seconds to warning
+you it is trying to detect suspicious software, and then shows a message something like:
+"analisis complete, could not find any malicious software, want to continue run this?", just click continue.
 
-If you do not trust in the excecutable, simply download [AutoHotKey](http://www.autohotkey.com/), and download the script (.ahk file), and run it by yourself...
+If you do not trust in the excecutable, simply download [AutoHotKey](http://www.autohotkey.com/),
+and download the script (.ahk file), and run it by yourself...
 you can see the code (yay opensource!) and check there is no harmful code, just fun! :D
 
 Author
