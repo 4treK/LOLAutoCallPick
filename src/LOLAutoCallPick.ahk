@@ -4,6 +4,7 @@ global RoleSelectedMode
 global RoleSelectedRadio
 global RoleSelectedEdit
 global CloseProgramAfterAutoCallPick
+global MatchFound
 
 #SingleInstance force
 Init()
@@ -67,6 +68,8 @@ UserReady()
 {
 	static role
 
+	MatchFound = False
+
 	if RoleSelectedMode = Standard
 	{
 		if RoleSelectedRadio = 1
@@ -108,23 +111,47 @@ UserReady()
 	{
 		WinWaitActive ahk_class ApolloRuntimeContentWindow
 		{
+			;msgbox %MatchFound%
+			;Pause
+			if MatchFound = False
+			{
+				;guicontrol, , ProgramStatus, TRUE
+				;Pause
+				checkMatchFound()
+				Continue
+			}
+			else
+			{
+				;guicontrol, , ProgramStatus, FALSE
+				;Pause
+
+				;Click Accept Button
+				Sleep, 100
+				Click 544, 445
+			}
+
+			;MsgBox bbb
+			;Pause
+
 			PixelSearch, FoundaX, FoundaY, 852, 121, 1001, 150, 0xFFFFFF, 0, Fast ;Find Search Box
 			if ErrorLevel = 0
 			{
 				guicontrol, , ProgramStatus, Auto calling and picking...
 				;CALL ROLE
-				Sleep, 500
-				MouseClick, left, 300, 735
+				Sleep, 600
+				Click 300, 735
 				Send, %role%{enter}
-				Sleep, 100
+				Sleep, 200
 
 				;PICK HERO
-				MouseClick, left, 920, 130
+				Click 920, 130, 2
 				Send, %ChampionSelected%
-				Sleep, 100
-				MouseClick, Left, 325, 212
+				Sleep, 200
+				Click 325, 212
 
-				Sleep, 500
+				;RESET HERO FILTER
+				Sleep, 200
+				Click 300, 735
 
 				guicontrol, , ProgramStatus, Auto call and pick done...`nClick Start button again to begin another round :)
 
@@ -136,5 +163,19 @@ UserReady()
 				return
 			}
 		}
+	}
+}
+
+;returns bool
+checkMatchFound(){
+	;PixelSearch, pixelX, pixelY, 129, 45, 133, 48, 0xE4CF6F, 0, Fast RGB
+	PixelSearch, pixelX, pixelY, 129, 45, 133, 48, 0x72683A, 0, Fast RGB
+	if ErrorLevel = 0
+	{
+		;MouseMove, pixelX, pixelY, 0
+		;PixelGetColor, OutputVar, pixelX, pixelY, RGB
+		;MsgBox encontrado color %OutputVar%
+		;pause
+		MatchFound = True
 	}
 }
