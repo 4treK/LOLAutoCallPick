@@ -139,19 +139,19 @@ UserReady()
 				guicontrol, , ProgramStatus, Auto calling and picking...
 				;CALL ROLE
 				Sleep, 600
-				Click 300, 735
+				Click 300, 735 ;TEAM CHAT
 				Send, %role%{enter}
 				Sleep, 200
 
 				;PICK HERO
-				Click 920, 130, 2
+				Click 920, 130, 2 ;HERO FILTER
 				Send, %ChampionSelected%
 				Sleep, 200
 				Click 325, 212
 
 				;RESET HERO FILTER
 				Sleep, 200
-				Click 300, 735
+				Click 920, 130 ;HERO FILTER
 
 				guicontrol, , ProgramStatus, Auto call and pick done...`nClick Start button again to begin another round :)
 
