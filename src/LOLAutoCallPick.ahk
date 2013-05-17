@@ -120,15 +120,6 @@ UserReady()
 				checkMatchFound()
 				Continue
 			}
-			else
-			{
-				;guicontrol, , ProgramStatus, FALSE
-				;Pause
-
-				;Click Accept Button
-				Sleep, 100
-				Click 544, 445
-			}
 
 			;MsgBox bbb
 			;Pause
@@ -172,10 +163,16 @@ checkMatchFound(){
 	PixelSearch, pixelX, pixelY, 129, 45, 133, 48, 0x72683A, 0, Fast RGB
 	if ErrorLevel = 0
 	{
+		;DEBUG
 		;MouseMove, pixelX, pixelY, 0
 		;PixelGetColor, OutputVar, pixelX, pixelY, RGB
 		;MsgBox encontrado color %OutputVar%
-		;pause
+
+		;SET FLAG
 		MatchFound = True
+
+		;Click Accept Button
+		Sleep, 100
+		Click 544, 445
 	}
 }
