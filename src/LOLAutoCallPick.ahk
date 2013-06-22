@@ -19,10 +19,10 @@ Init()
 	Gui, Add, GroupBox, x10 y10 w210 h10, Select Hero
 	gui, add, DropDownList
 		, x10 y30 w210 h21 Choose1 Sort r20 vChampionSelected
-		,Ahri|Akali|Alistar|Amumu|Anivia|Annie|Ashe|Blitzcrank|Brand|Caitlyn|Cassiopeia|Cho'Gath|Corki|Darius|Diana|Dr. Mundo|Draven
+		,Aatrox|Ahri|Akali|Alistar|Amumu|Anivia|Annie|Ashe|Blitzcrank|Brand|Caitlyn|Cassiopeia|Cho'Gath|Corki|Darius|Diana|Dr. Mundo|Draven
 		|Elise|Evelynn|Ezreal|Fiddlesticks|Fiora|Fizz|Galio|Gangplank|Garen|Gragas|Graves|Hecarim|Heimerdinger|Irelia|Janna|Jarvan IV|Jax|Jayce
 		|Karma|Karthus|Kassadin|Katarina|Kayle|Kennen|Kha'Zix|Kog'Maw|LeBlanc|Lee|Leona|Lulu|Lux Mage|Malphite|Malzahar|Maokai|Master Yi|Miss Fortune|Mordekaiser|Morgana
-		|Nami|Nasus|Nautilus|Nidalee|Nocturne|Nunu|Olaf|Orianna|Pantheon|Poppy|Quinn and Valor|Rammus|Renekton|Rengar|Riven|Rumble|Ryze
+		|Nami|Nasus|Nautilus|Nidalee|Nocturne|Nunu|Olaf|Orianna|Pantheon|Poppy|Quinn|Rammus|Renekton|Rengar|Riven|Rumble|Ryze
 		|Sejuani|Shaco|Shen|Shyvana|Singed|Sion|Sivir|Skarner|Sona|Soraka|Swain|Syndra|Talon|Taric|Teemo|Thresh|Tristana|Trundle|Tryndamere|Twisted Fate|Twitch
 		|Udyr|Urgot|Varus|Vayne|Veigar|Vi|Viktor|Vladimir|Volibear|Warwick|Wukong|Xerath|Xin Zhao|Yorick|Zac|Zed|Ziggs|Zilean|Zyra
 
@@ -36,7 +36,7 @@ Init()
 	Gui, Add, GroupBox, x12 y399 w210 h10 , About
 	Gui, Add, Link, x12 y419 w210 r4 c008080, Created by k014 (NA Server summoner)`n`nCheck last version in the website:`n<a href="http://github.com/joecabezas/LOLAutoPick">http://github.com/joecabezas/LOLAutoPick</a>
 
-	Gui, Add, CheckBox, x12 y289 w210 h20 vCloseProgramAfterAutoCallPick, Close program after AutoCallPick
+	Gui, Add, CheckBox, x12 y289 w210 h20 checked vCloseProgramAfterAutoCallPick, Close program after AutoCallPick
 
 	Gui, Add, GroupBox, x10 y60 w210 h10 , Select Role
 	Gui, Add, Tab, x10 y80 w210 h100 vRoleSelectedMode, Standard|Custom
