@@ -10,7 +10,10 @@ global MatchFound
 Init()
 
 F11::Reload
-F12::ExitApp
+Escape::ExitApp
+
+GuiClose:
+ExitApp
 
 Init()
 {
