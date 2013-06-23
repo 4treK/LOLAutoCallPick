@@ -4,7 +4,6 @@ global RoleSelectedMode
 global RoleSelectedRadio
 global RoleSelectedEdit
 global CloseProgramAfterAutoCallPick
-global MatchFound
 
 #SingleInstance force
 Init()
@@ -37,7 +36,7 @@ Init()
 	Gui, Add, GroupBox, x12 y319 w210 h10, Status
 	Gui, Add, Text, x12 y339 w210 r4 vProgramStatus, Waiting user to be ready :)
 	Gui, Add, GroupBox, x12 y399 w210 h10 , About
-	Gui, Add, Link, x12 y419 w210 r4 c008080, Created by k014 (NA Server summoner)`n`nCheck last version in the website:`n<a href="http://github.com/joecabezas/LOLAutoPick">http://github.com/joecabezas/LOLAutoPick</a>
+	Gui, Add, Link, x12 y419 w210 r4 c008080, Created by k014 (LAS Server summoner)`n`nCheck last version in the website:`n<a href="http://github.com/joecabezas/LOLAutoPick">http://github.com/joecabezas/LOLAutoPick</a>
 
 	Gui, Add, CheckBox, x12 y289 w210 h20 checked vCloseProgramAfterAutoCallPick, Close program after AutoCallPick
 
@@ -114,25 +113,13 @@ UserReady()
 	{
 		WinWaitActive ahk_class ApolloRuntimeContentWindow
 		{
-			;msgbox %MatchFound%
-			;Pause
-			if MatchFound = False
-			{
-				;guicontrol, , ProgramStatus, TRUE
-				;Pause
-				checkMatchFound()
-				Continue
-			}
-
-			;MsgBox bbb
-			;Pause
-
 			PixelSearch, FoundaX, FoundaY, 852, 121, 1001, 150, 0xFFFFFF, 0, Fast ;Find Search Box
 			if ErrorLevel = 0
 			{
 				guicontrol, , ProgramStatus, Auto calling and picking...
+
 				;CALL ROLE
-				Sleep, 600
+				Sleep, 1000
 				Click 300, 735 ;TEAM CHAT
 				Send, %role%{enter}
 				Sleep, 200
@@ -147,6 +134,12 @@ UserReady()
 				Sleep, 200
 				Click 920, 130 ;HERO FILTER
 
+				;CALL ROLE ONE LAST TIME
+				Sleep, 1000
+				Click 300, 735 ;TEAM CHAT
+				Send, %role%{enter}
+				Sleep, 200
+
 				guicontrol, , ProgramStatus, Auto call and pick done...`nClick Start button again to begin another round :)
 
 				if CloseProgramAfterAutoCallPick = 1
@@ -160,7 +153,10 @@ UserReady()
 	}
 }
 
-;returns bool
+;DEPRECATED, BUT DONT WANT TO DELETE
+;IT WILL BE USEFUL IN FUTURE, OR OTHER
+;PROJECTS, GO OPENSOURCE!
+
 checkMatchFound(){
 	;PixelSearch, pixelX, pixelY, 129, 45, 133, 48, 0xE4CF6F, 0, Fast RGB
 	PixelSearch, pixelX, pixelY, 129, 45, 133, 48, 0x72683A, 0, Fast RGB
