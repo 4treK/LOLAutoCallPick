@@ -135,7 +135,13 @@ UserReady()
 				Click 920, 130 ;HERO FILTER
 
 				;CALL ROLE ONE LAST TIME
-				Sleep, 1000
+				Sleep, 300
+				Click 300, 735 ;TEAM CHAT
+				Send, %role%{enter}
+				Sleep, 200
+
+				;CALL ROLE ONE LAST TIME
+				Sleep, 300
 				Click 300, 735 ;TEAM CHAT
 				Send, %role%{enter}
 				Sleep, 200
