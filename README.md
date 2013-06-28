@@ -24,7 +24,7 @@ Download the executable (.exe)
 
 You have 2 options, run the script in AutoHotKey software, or opening the excecutable version.
 
-LOLAutoCallPick is an AutoHotKey script, so, if you have problems or you do not trust in the excecutable, just download for free [AutoHotKey](http://www.autohotkey.com/), and then run the script file LOLAutoCallPick.ahk, this file it's just a simple plain text file, so you can open it in notepad towatch inside the code and see what's actually doing.
+LOLAutoCallPick is an AutoHotKey script, so, if you have problems or you do not trust in the excecutable, just download for free [AutoHotKey](http://www.autohotkey.com/), and then run the script file LOLAutoCallPick.ahk, this file it's just a simple plain text file, so you can open it in notepad watch inside the code and see what's actually doing.
 
 About Antiviruses
 -----------------
@@ -42,4 +42,4 @@ you can see the code (yay opensource!) and check there is no harmful code, just 
 Author
 ---------
 
-In LOL my summoner's name is k014 (in NA server), feel free to contact me.
+In LOL my summoner's name is k014 (in LAS server), feel free to contact me.
