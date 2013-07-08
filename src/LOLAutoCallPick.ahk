@@ -38,7 +38,7 @@ Init()
 	Gui, Add, GroupBox, x12 y339 w210 h10, Status
 	Gui, Add, Text, x12 y359 w210 r4 vProgramStatus, Waiting user to be ready :)
 	Gui, Add, GroupBox, x12 y419 w210 h10 , About
-	Gui, Add, Link, x12 y439 w210 r4 c008080, Created by k014 (LAS Server summoner)`n`nCheck last version in the website:`n<a href="http://github.com/joecabezas/LOLAutoPick">http://github.com/joecabezas/LOLAutoPick</a>
+	Gui, Add, Link, x12 y439 w210 r4 c008080, Created by k014 (LAS Server summoner)`n`nCheck last version in the website:`n<a href="http://bit.ly/lolautocallpick">http://bit.ly/lolautocallpick</a>
 
 	Gui, Add, CheckBox, x12 y309 w210 h20 checked vCloseProgramAfterAutoCallPick, Close program after AutoCallPick
 
